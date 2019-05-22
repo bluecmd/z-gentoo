@@ -1,0 +1,5 @@
+netboot-s390x-kernel
+netboot-s390x-initramfs
+initramfs.siz
+initramfs.off
+.*.swp
