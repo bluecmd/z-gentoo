@@ -15,5 +15,18 @@ IPL `gentoo.ins`.
 
 ## Usage
 
+Networking is done like this (OSA, Layer2):
+
+```
+modprobe qeth
+echo 0.0.0e20,0.0.0e21,0.0.0e22 > /sys/bus/ccwgroup/drivers/qeth/group
+echo 1 > /sys/bus/ccwgroup/drivers/qeth/0.0.0e20/online
+net-setup 192.168.11.2 192.168.11.1
+```
+
+You can then use `passwd` to set a root password and login via SSH as root.
+
+For Hercules the device statement is `0E20.3 QETH ifname qeth0`.
+
 See the [Gentoo wiki for Hercules](https://wiki.gentoo.org/wiki/S390/Hercules)
 for more tips and tricks.
