@@ -13,4 +13,4 @@ initramfs.off:
 	echo -n '\01\0\0\0' > $@
 
 initramfs.siz: netboot-s390x-initramfs
-	python -c 'import os, struct; s = os.stat("netboot-s390x-initramfs"); os.write(1, struct.pack(">L", s.st_size))' > $@
+	python3 -c 'import os, struct; s = os.stat("netboot-s390x-initramfs"); os.write(1, struct.pack(">L", s.st_size))' > $@
